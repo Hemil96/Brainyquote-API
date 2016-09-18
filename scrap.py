@@ -5,6 +5,9 @@ import json
 import random
 
 cat_list = []
+cat_dir = {
+	"cat" : cat_list
+}
 page_list = [] 
 quotes_list = []
 
@@ -15,7 +18,8 @@ def category():
 	category = soup.find_all('a',{"href" : re.compile("/quotes/topics/topic_")}) #to find tag "a" who contains category
 	for name in category:
 		cat_list.append(name.text)
-	return json.dump(cat_list) 
+	
+	return json.dumps(cat_dir) 
 
 def pages(category):
 	url = "http://www.brainyquote.com/quotes/topics/topic_" + category + ".html"
@@ -40,6 +44,8 @@ def quotes(category):
 		quotes_list.append(each.text)
 	return (random.choice(quotes_list))
 
+category()
+# print cat_dir['cat']
 	
 
 
