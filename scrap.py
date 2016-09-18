@@ -18,7 +18,7 @@ def category():
 	category = soup.find_all('a',{"href" : re.compile("/quotes/topics/topic_")}) #to find tag "a" who contains category
 	for name in category:
 		cat_list.append(name.text)
-	
+
 	return json.dumps(cat_dir) 
 
 def pages(category):
@@ -44,8 +44,8 @@ def quotes(category):
 		quotes_list.append(each.text)
 	return (random.choice(quotes_list))
 
-category()
-# print cat_dir['cat']
+
+
 	
 
 
