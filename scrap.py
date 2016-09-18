@@ -42,8 +42,8 @@ def quotes(category):
 	a_quotes =  soup.find_all('a',title='view quote')
 	for each in a_quotes:
 		quotes_list.append(each.text)
-	return (random.choice(quotes_list))
-
+		random_quote = { "quote" : random.choice(quotes_list)}
+	return random_quote
 
 
 	
