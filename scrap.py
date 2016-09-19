@@ -35,7 +35,6 @@ def quotes(category):
 	p = int(pages(category))
 	page = range(1,p+1)
 	random_page = random.choice(page)
-	print random_page
 	url = "http://www.brainyquote.com/quotes/topics/topic_" + category + str(random_page) + ".html"
 	html = requests.get(url)
 	soup = BeautifulSoup(html.text)
