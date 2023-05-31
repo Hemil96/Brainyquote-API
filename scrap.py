@@ -47,10 +47,10 @@ def quotes(category, numberOfQuotes):
             html = requests.get(url)
             soup = BeautifulSoup(html.text, features="html.parser")
         
-        divID = "qpos_" + str(x) + "_" + str(y)
+        divID = "pos_" + str(x) + "_" + str(y)
         find = soup.find("div", {"id": divID})
         if find is not None:
-            quotes_list.append(find.text.replace('\n\n\n\n','\n'))
+            quotes_list.append(find.text.replace('\n\n\n\n','\n').strip())
 
         n += 1
 
